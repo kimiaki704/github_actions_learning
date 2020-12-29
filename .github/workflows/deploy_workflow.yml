@@ -39,15 +39,12 @@ jobs:
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
-        env:
-          BRANCH_NAME: ${{ steps.create_branch.outputs.branch_name }}
-          TAG_VERSION: ${{ steps.get_version.outputs.VERSION }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main
-          branch: $BRANCH_NAME
+          branch: ${{ steps.create_branch.outputs.branch_name }}
           delete-branch: true
-          title: '[Example] Update report $TAG_VERSION'
+          title: '[Example] Update report ${{ steps.get_version.outputs.VERSION }}'
           body: |
             Update report
             - Updated with *today's* date
