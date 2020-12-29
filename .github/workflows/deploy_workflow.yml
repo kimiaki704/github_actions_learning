@@ -16,6 +16,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Update report
+          base: develop
           branch: example-patches
           delete-branch: true
           title: '[Example] Update report'
