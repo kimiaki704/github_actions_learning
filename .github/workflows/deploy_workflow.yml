@@ -10,14 +10,14 @@ jobs:
       - uses: actions/setup-node@v1 # Node.js 環境の構築
         with:
           node-version: '10.x'
-      - uses: actions/checkout@develop # リポジトリを読み込み
+      - uses: actions/checkout@v2 # リポジトリを読み込み
       - run: npm install -g npm
       - run: npm -v
       - run: npm audit fix
       - name: Create Pull Request # ブランチを作成して PullRequest を作成
         id: cpr
-        uses: peter-evans/create-pull-request@v1.0.0
+        uses: peter-evans/create-pull-request@v3
         with:
           title: Bump version and deploy v1.0.0
           branch: bump-version #作成されるブランチは bump-version-xxxxxxx
-          token: ${{ secrets.GITHUB }}
+          token: ${{ secrets.GITHUB_TOKEN }}
