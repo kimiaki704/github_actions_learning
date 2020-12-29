@@ -14,7 +14,6 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.PAT }}
-          signoff: false
           branch: main
           base: develop
           title: '[Example] Update report'
