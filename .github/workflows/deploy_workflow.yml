@@ -22,18 +22,18 @@ jobs:
           ref: develop
 
       # ブランチを作成する
-      - name: Create Branch
-        id: create_branch
-        env:
-          TZ: 'Asia/Tokyo'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          DATE=`date +"%Y%m%d"`
-          TAG=${{ steps.get_version.outputs.version }}
-          BRANCH_NAME="release_$DATE_$TAG"
-          git checkout -b "$BRANCH_NAME"
-          git push origin "$BRANCH_NAME"
-          echo ::set-output name=branch_name::$BRANCH_NAME
+      # - name: Create Branch
+      #   id: create_branch
+      #   env:
+      #     TZ: 'Asia/Tokyo'
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     DATE=`date +"%Y%m%d"`
+      #     TAG=${{ steps.get_version.outputs.version }}
+      #     BRANCH_NAME="release_$DATE_$TAG"
+      #     git checkout -b "$BRANCH_NAME"
+      #     git push origin "$BRANCH_NAME"
+      #     echo ::set-output name=branch_name::$BRANCH_NAME
 
       # プルリクを作成する
       - name: Create Pull Request
@@ -43,9 +43,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: '[BOT] UPDATE'
           title: '[Example] Update report ${{ steps.get_version.outputs.version }}'
-          base: main
           branch-suffix: 'short-commit-hash'
-          branch: ${{ steps.create_branch.outputs.branch_name }}
           delete-branch: false
 
       # - name: pull-request
