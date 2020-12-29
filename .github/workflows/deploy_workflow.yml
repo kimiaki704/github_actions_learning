@@ -17,7 +17,7 @@ jobs:
 
       # dev ブランチをチェックアウトする
       - name: checkout develop
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           ref: develop
 
