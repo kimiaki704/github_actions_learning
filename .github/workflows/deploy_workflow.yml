@@ -16,10 +16,10 @@ jobs:
         run: echo ::set-output name=version::${{ github.ref }}
 
       # dev ブランチをチェックアウトする
-      - name: checkout develop
-        uses: actions/checkout@v2
-        with:
-          ref: develop
+      # - name: checkout develop
+      #   uses: actions/checkout@v2
+      #   with:
+      #     ref: develop
 
       # ブランチを作成する
       # - name: Create Branch
@@ -37,7 +37,6 @@ jobs:
 
       # プルリクを作成する
       - name: Create Pull Request
-        id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
