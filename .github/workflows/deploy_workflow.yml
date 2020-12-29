@@ -45,7 +45,6 @@ jobs:
           commit-message: '[BOT] UPDATE'
           title: '[Example] Update report ${{ steps.get_version.outputs.version }}'
           base: main
-          branch-suffix: 'short-commit-hash'
           branch: ${{ steps.create_branch.outputs.branch_name }}
           delete-branch: false
 
