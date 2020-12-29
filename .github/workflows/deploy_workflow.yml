@@ -42,7 +42,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main
-          branch: ${{ steps.create_branch.outputs.branch_name }}
           delete-branch: false
           title: '[Example] Update report ${{ steps.get_version.outputs.VERSION }}'
           body: |
