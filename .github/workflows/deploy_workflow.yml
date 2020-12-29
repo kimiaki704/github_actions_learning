@@ -14,5 +14,6 @@ jobs:
         with:
           title: Bump version and deploy v1.0.0
           token: ${{ secrets.GITHUB_TOKEN }}
-	  branch: develop
-	  delete-branch: false
+          base: main
+          branch: develop
+          delete-branch: false
