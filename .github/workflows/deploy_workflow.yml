@@ -36,10 +36,12 @@ jobs:
           echo ::set-output name=branch_name::$BRANCH_NAME
 
       # プルリクを作成する
-
+      - uses: actions/checkout@v2
       - name: pull-request
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "main"
-          pr_title: '[Example] Update report ${{ steps.get_version.outputs.VERSION }}'
+          pr_title: "[Example] Update report ${{ steps.get_version.outputs.VERSION }}"
+          pr_draft: false
+          pr_allow_empty: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
