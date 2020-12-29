@@ -17,7 +17,7 @@ jobs:
 
       # dev ブランチをチェックアウトする
       - name: checkout develop
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
         with:
           ref: develop
 
@@ -36,6 +36,7 @@ jobs:
           echo ::set-output name=branch_name::$BRANCH_NAME
 
       - name: Install hub
+        uses: actions/checkout@v1
         uses: geertvdc/setup-hub@master
 
       # プルリクを作成する
