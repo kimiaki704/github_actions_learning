@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        - ref: ${{ env.BASE_BRANCH }}
+        with:
+          ref: ${{ env.BASE_BRANCH }}
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v3
