@@ -52,12 +52,12 @@ jobs:
 
       #       [1]: https://github.com/peter-evans/create-pull-request
 
-      - uses: actions/checkout@v2
       - name: pull-request
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "main"
           pr_title: "[Example] Update report ${{ steps.get_version.outputs.VERSION }}"
+          pr_body: ":crown: *An automated PR*"
           pr_draft: false
           pr_allow_empty: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
