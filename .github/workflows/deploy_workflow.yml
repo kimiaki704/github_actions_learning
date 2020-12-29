@@ -13,5 +13,5 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           title: Bump version and deploy v1.0.0
-          branch: bump-version #作成されるブランチは bump-version-xxxxxxx
           token: ${{ secrets.GITHUB_TOKEN }}
+	  base: main
