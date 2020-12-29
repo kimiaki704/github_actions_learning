@@ -16,6 +16,6 @@ jobs:
           token: ${{ secrets.PAT }}
           signoff: false
           branch: main
-          delete-branch: true
+          base: develop
           title: '[Example] Update report'
           draft: false
