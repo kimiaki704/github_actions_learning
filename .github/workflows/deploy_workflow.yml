@@ -29,8 +29,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           DATE=`date +"%Y%m%d"`
-          TAG_VERSION=${{ steps.get_version.outputs.VERSION }}
-          BRANCH_NAME="release_$DATE" + "$TAG_VERSION"
+          BRANCH_NAME=${{ release_$DATE }}${{' '}}${{ steps.get_version.outputs.VERSION }}
           git checkout -b "$BRANCH_NAME"
           git push origin "$BRANCH_NAME"
           echo ::set-output name=branch_name::$BRANCH_NAME
