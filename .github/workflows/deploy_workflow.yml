@@ -15,6 +15,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: bump-v0.0.21
-          base: main
+          base: develop
           title: '[Example] Update report'
           draft: false
