@@ -40,6 +40,6 @@ jobs:
       - name: pull-request
         uses: repo-sync/pull-request@v2
         with:
-          destination_branch: '[Example] Update report ${{ steps.get_version.outputs.VERSION }}'
-          pr_title: "Pulling ${{ github.ref }} into master"
+          destination_branch: "main"
+          pr_title: '[Example] Update report ${{ steps.get_version.outputs.VERSION }}'
           github_token: ${{ secrets.GITHUB_TOKEN }}
