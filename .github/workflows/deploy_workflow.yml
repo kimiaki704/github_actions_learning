@@ -41,8 +41,8 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ steps.create_branch.outputs.branch_name }}
-          base: main
+          branch: main
+          base: ${{ steps.create_branch.outputs.branch_name }}
           delete-branch: true
           title: '[Example] Update report ${{ steps.get_version.outputs.version }}'
           body: |
