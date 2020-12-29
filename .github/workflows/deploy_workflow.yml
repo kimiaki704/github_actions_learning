@@ -35,8 +35,8 @@ jobs:
           git push origin "$BRANCH_NAME"
           echo ::set-output name=branch_name::$BRANCH_NAME
 
+      - uses: actions/checkout@v1
       - name: Install hub
-        uses: actions/checkout@v1
         uses: geertvdc/setup-hub@master
 
       # プルリクを作成する
