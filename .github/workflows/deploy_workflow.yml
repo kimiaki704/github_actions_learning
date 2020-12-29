@@ -39,11 +39,10 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_NAME: ${{ steps.create_branch.outputs.branch_name }}
           TAG_VERSION: ${{ steps.get_version.outputs.VERSION }}
         with:
-          token: $GITHUB_TOKEN
+          token: ${{ secrets.GITHUB_TOKEN }}
           base: main
           branch: $BRANCH_NAME
           delete-branch: true
