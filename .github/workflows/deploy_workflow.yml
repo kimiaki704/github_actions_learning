@@ -35,6 +35,9 @@ jobs:
           git push origin "$BRANCH_NAME"
           echo ::set-output name=branch_name::$BRANCH_NAME
 
+      - name: Install hub
+        uses: geertvdc/setup-hub@master
+
       # プルリクを作成する
       # - name: Create Pull Request
       #   id: cpr
